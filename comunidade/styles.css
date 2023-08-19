@@ -1,183 +1,435 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: 'Inter';
 }
 
 
-body{
-    background: #dddcdc;
+body {
+    background: #F2F2F2;
+    min-height: 100vh;
+    padding-bottom: 20px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #000;
 }
 
-a:hover{
+a:hover {
+    color: #FF416C;
+}
+
+#navheader {
+    position: sticky;
+    top: 0;
+    padding: 12px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.comunidade-navbar {
+    display: flex;
+    align-items: center;
+}
+
+.comunidade-navbar a>img {
+    width: 240px;
+    height: 40px;
+}
+
+.comunidade-navbar-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    list-style-type: none;
+}
+
+.comunidade-navbar-item.search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 64px;
+    background: #F2F2F2;
+    padding: 4px 8px;
+
+}
+
+.comunidade-navbar-item.search img {
+    width: 24px;
+    height: 24px;
+}
+
+.comunidade-navbar-item.search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    background: transparent;
+    font-size: 16px;
+
+}
+
+.comunidade-navbar-item.chat {
+    margin-right: 8px;
+    position: relative;
+
+}
+
+
+
+.comunidade-navbar-item.chat img {
+    width: 20px;
+    height: 20px;
+}
+
+.comunidade-navbar-item.notification {
+    position: relative;
+
+}
+
+.comunidade-navbar-item.notified::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #FF416C;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+
+.comunidade-navbar-item.chat.notified::after {
+    top: -3px;
+    right: -4px;
+}
+
+.comunidade-navbar-item.notification img {
+    width: 24px;
+    height: 24px;
+}
+
+
+.comunidade-navbar-item.user {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0 12px;
+}
+
+
+/*---------------------------MAIN----------------------------------*/
+
+.feed-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 50px;
+    padding: 0 40px;
+}
+
+.topicos {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #d9d9d9;
+    position: sticky;
+    top: 83px;
+}
+
+.topicos>p,
+.topicos-em-alta>p,
+.noticias>p {
+    border-bottom: 1px solid #D9D9D9;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 12px 4px;
+}
+
+.topicos ul,
+.topicos-em-alta ul,
+.noticias ul {
+    list-style-type: none;
+    padding: 12px;
+}
+
+.topicos ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+
+.topicos ul li .comunidade-nome-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.topicos ul li p.comunidade-nome {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.topicos ul li p.comunidade-members {
+    font-size: 14px;
+    font-weight: 400;
     color: #ccc;
 }
-.container{
-    max-width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+.button-see-all {
+    display: block;
+    width: 90%;
+    padding: 4px;
+    margin: 12px auto;
+    border-radius: 20px;
+    background: none;
+    border: 1px solid #FF416C;
+    color: #FF416C;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .2s ease;
 }
 
-header{
-    width: 100%;
-    position: sticky;
+.button-see-all:hover {
+    background: #FF416C;
+    color: #fff;
+}
+
+
+.topicos-em-alta {
     background: #fff;
-    padding: 12px 24px;
-    top: 0;
-    z-index: 10;
+    border-radius: 15px;
+    border: 1px solid #d9d9d9;
 }
 
-.navigation{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 12px;
+.topicos-em-alta ul li {
+    margin-bottom: 12px;
 }
 
-.navigationList{
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    list-style: none;
-}
-
-
-.forum-area {
-    display: flex;
-    margin-top: 20px;
-    gap: 12px;
-    position: relative;
-}
-
-.forums{
-    padding: 24px;
-    background: #fff;
-    flex: 1;
-    border-radius: 4px;
-    height: 300px;
-    position: sticky;
-    top: 80px;
-    z-index: 10;
-
-}
-
-.forums nav{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.forums nav ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
-
-
-.comments{
-    flex: 3;
-    background: #fff;
-    padding: 24px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    border-radius: 4px;
-}
-
-.userComment{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background: #eeeded;
-    padding: 12px;
-    
-}
-
-.userInfo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.profileIcon{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.profile{
-    flex:1;
-    background: #fff;
-    border-radius: 4px;
-    padding: 24px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 8px;
-
-    position: sticky;
-    top: 80px;
-    z-index: 10;
-}
-/* Estilo para o botão de abrir o modal */
-#openModalButton {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+.topicos-em-alta ul li p.hot-topic-title {
     font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    font-weight: 600;
 }
 
-/* Estilo para o modal */
-.modal {
-    display: none; /* Esconde o modal */
-    position: fixed; /* Faz com que o modal fique fixo na tela */
-    z-index: 1; /* Coloca o modal na frente de tudo */
-    left: 0;
-    top: 0;
+.topicos-em-alta ul li p.hot-topic-posts {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+
+.feed {
+    flex: 1;
+    margin: 0 60px;
+}
+
+
+.feed .user-feed-input-container {
     width: 100%;
-    height: 100%;
-    overflow: auto; /* Adiciona uma barra de rolagem caso o conteúdo seja maior que a tela */
-    background-color: rgba(0, 0, 0, 0.4); /* Adiciona um fundo escuro semi-transparente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #d9d9d9;
+    padding: 20px 24px;
 }
 
-/* Estilo para o conteúdo do modal */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto; /* Centraliza o conteúdo do modal na horizontal */
-    padding: 10px;
-    border: 1px solid #888;
-    width: 80%; /* Define a largura do conteúdo do modal */
+.user-feed-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Estilo para o botão de fechar o modal */
-.close {
-    color: red;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.user-feed-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 12px;
+    font-size: 16px;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
+.user-feed-input .input-div-container {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.user-feed-input .input-div-container button {
+    background: none;
+    border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    transition: all .2s ease;
+    padding: 5px;
+
+}
+
+
+
+
+.feed .tools {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.feed .tools .tool-container {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.tool-container {
+    color: #626365;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: all .2s ease;
+}
+
+.tool-container:hover {
+    background: #f0eeee;
+    border-radius: 4px;
+}
+
+.feed .tools .tool-container p {
+
+    font-size: 12px;
+    color: #626365;
+}
+
+
+.post {
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #d9d9d9;
+    padding: 20px;
+}
+
+.post .user-post {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.post .post-hashtags-container>div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post .post-hashtags-container>div p.post-time {
+    color: #898C94;
+    font-size: 14px;
+}
+
+.post-hashtags-container .divider-point {
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background-color: #898C94;
+}
+
+.hashtags {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+.hashtag {
+    color: #626365;
+    font-size: 12px;
+}
+
+.post-description {
+    font-size: 16px;
+    margin-top: 24px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.action {
+    color: #626365;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: all .2s ease;
+}
+
+.action:hover {
+    background: #f0eeee;
+    border-radius: 4px;
+}
+
+.actions .like-comment {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+
+.topics-news {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: sticky;
+    top: 83px;
+}
+
+
+.noticias {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #d9d9d9;
+}
+
+.noticias ul li {
+    margin-bottom: 12px;
+}
+
+.noticias ul li p.news-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.noticias ul li p.news-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
 }
