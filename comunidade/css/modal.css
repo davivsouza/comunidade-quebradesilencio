@@ -1,0 +1,346 @@
+@keyframes openmodal {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+#overlay-modal-post {
+  width: 100vw;
+  height: 100vh;
+  background: #0000006e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#post-modal-content {
+  width: 600px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  animation-name: openmodal;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+}
+
+
+
+
+.user-feed-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #d9d9d9;
+  padding: 20px 24px;
+}
+
+.post-modal-user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.post-modal-user textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 12px;
+  font-size: 16px;
+  resize: none;
+  transition: all .2s ease;
+}
+
+.post-modal-user textarea:focus {
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+}
+
+.post-modal-user .input-div-container {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.post-modal-user .input-div-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  transition: all .2s ease;
+  padding: 5px;
+
+}
+
+
+.user-post-data {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-post-data p {
+  font-family: 'Inter';
+  font-size: 16px;
+}
+
+
+.tools {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tools .tool-container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.tool-container {
+  color: #626365;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: all .2s ease;
+}
+
+.tool-container:hover {
+  background: #f0eeee;
+  border-radius: 4px;
+}
+
+.tools .tool-container p {
+
+  font-size: 12px;
+  color: #626365;
+}
+
+
+.actions-btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+#cancel-post-btn {
+  align-self: flex-end;
+  width: 120px;
+  padding: 12px;
+  background: none;
+  color: #FF416C;
+  font-family: 'Inter';
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  transform: scale(1);
+}
+
+#create-post-btn {
+  width: 120px;
+  padding: 12px;
+  background: #FF416C;
+  color: #fff;
+  font-family: 'Inter';
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  transform: scale(1);
+}
+
+#create-post-btn:hover,
+#cancel-post-btn:hover,
+#cancel-report-btn:hover {
+  transform: scale(1.1);
+}
+
+#create-post-btn:active,
+#cancel-post-btn:active,
+#cancel-report-btn:active {
+  transform: scale(0.9);
+}
+
+
+/* REPORT MODAL */
+
+#overlay-modal-report {
+  width: 100vw;
+  height: 100vh;
+  background: #0000006e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#report-modal-content {
+  width: 600px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  animation-name: openmodal;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  position: relative;
+}
+
+#report-modal-content>h3 {
+  text-align: center;
+}
+
+#report-modal-content .report-options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+#report-modal-content .report-option {
+  padding: 12px 24px;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all .2s ease;
+  color: #626365;
+  background: none;
+  font-size: 16px;
+  text-align: left;
+}
+
+#report-modal-content .report-option:hover {
+  border-color: #FF416C;
+  color: #FF416C;
+}
+
+.report-footer-text {
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.btn-toogle-modal {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cancel-report-btn {
+  width: 120px;
+  padding: 12px;
+  background: none;
+  color: #FF416C;
+  font-family: 'Inter';
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  transform: scale(1);
+}
+
+
+/* USER MODAL */
+
+#overlay-user-modal {
+  width: 100vw;
+  height: 100vh;
+  background: #0000006e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#user-modal-content {
+  width: 600px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  animation-name: openmodal;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  position: relative;
+}
+
+
+.username,
+.achievements {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.achievement {
+  width: 200px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  border: 1px solid #d9d9d9;
+  padding: 24px 12px;
+  border-radius: 15px;
+}
+
+.achievement img {
+  width: 24px;
+  height: 24px;
+}
+
+.achievement p {
+  font-size: 14px;
+  color: #626365;
+}
+
+.close-btn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 10;
+  left: 90%;
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: none;
+  border-radius: 100%;
+  background-color: #FF416C;
+  padding: 4px;
+  cursor: pointer;
+}

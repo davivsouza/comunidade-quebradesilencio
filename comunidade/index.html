@@ -9,7 +9,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;800&family=Inter:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/modal.css">
   <title>Quebra de Silêncio - Comunidade</title>
 </head>
 
@@ -34,7 +35,8 @@
             <img src="./assets/notification.png" alt="">
           </a>
         </li>
-        <li class="comunidade-navbar-item user ">
+        <li class="comunidade-navbar-item user" onclick="openUserModal()">
+
           <p>Elisângela</p>
           <img src="./assets/user_icon.png" alt="Elisângela">
 
@@ -86,31 +88,14 @@
         <div class="user-feed-input">
           <img src="./assets/user_icon.png" alt="Elisângela">
           <div class="input-div-container">
-            <input type="text" name="post" id="post" placeholder="Compartilhe o que está pensando...">
+            <input type="text" name="post" id="post-feed" placeholder="No que você está pensando?"
+              onclick="openModal()">
             <button type="button">
               <img src="./assets/send.png" alt="Enviar">
-
             </button>
           </div>
         </div>
-        <div class="tools">
-          <button class="tool-container">
-            <img src="./assets/camera.png" alt="Câmera">
-            <p>Câmera</p>
-          </button>
-          <button class="tool-container">
-            <img src="./assets/images.png" alt="Câmera">
-            <p>Imagens</p>
-          </button>
-          <button class="tool-container">
-            <img src="./assets/videos.png" alt="Câmera">
-            <p>Vídeos</p>
-          </button>
-          <button class="tool-container">
-            <img src="./assets/location.png" alt="Câmera">
-            <p>Localização</p>
-          </button>
-        </div>
+
       </div>
       <div class="posts">
         <div class="post">
@@ -147,172 +132,13 @@
                 <p>Comentários</p>
               </button>
             </div>
-            <button type="button" class="action">
-              <img src="./assets/share.png" alt="Botão de compartilhar">
-              <p>Compartilhar</p>
+            <button type="button" class="action" onclick="openReportModal()">
+              <img src="./assets/report.png" alt="Botão de reportar">
+              <p>Denunciar</p>
             </button>
           </div>
         </div>
-        <div class="post">
-          <div class="user-post">
-            <img src="./assets/user_icon.png" alt="Elisângela">
-            <div class="post-hashtags-container">
-              <div>
-                <p>Elisângela</p>
-                <div class="divider-point"></div>
-                <p class="post-time">40 min</p>
-              </div>
-              <div class="hashtags">
-                <a href="#" class="hashtag">#sermãe</a>
-                <a href="#" class="hashtag">#filhos</a>
-                <a href="#" class="hashtag">#mãesolteira</a>
-                <a href="#" class="hashtag">#ajuda</a>
-              </div>
 
-
-            </div>
-          </div>
-          <p class="post-description">Estou tendo dificuldade em cuidar do meu filho, o que eu posso fazer?</p>
-          <div class="post-assets">
-            <!-- aqui vai imagem, video, arquivo etc. -->
-          </div>
-          <div class="actions">
-            <div class="like-comment">
-              <button type="button" class="action">
-                <img src="./assets/like.png" alt="Botão de gostei">
-                <p>Gostei</p>
-              </button>
-              <button type="button" class="action">
-                <img src="./assets/comment.png" alt="Botão de comentários">
-                <p>Comentários</p>
-              </button>
-            </div>
-            <button type="button" class="action">
-              <img src="./assets/share.png" alt="Botão de compartilhar">
-              <p>Compartilhar</p>
-            </button>
-          </div>
-        </div>
-        <div class="post">
-          <div class="user-post">
-            <img src="./assets/user_icon.png" alt="Elisângela">
-            <div class="post-hashtags-container">
-              <div>
-                <p>Elisângela</p>
-                <div class="divider-point"></div>
-                <p class="post-time">40 min</p>
-              </div>
-              <div class="hashtags">
-                <a href="#" class="hashtag">#sermãe</a>
-                <a href="#" class="hashtag">#filhos</a>
-                <a href="#" class="hashtag">#mãesolteira</a>
-                <a href="#" class="hashtag">#ajuda</a>
-              </div>
-
-
-            </div>
-          </div>
-          <p class="post-description">Estou tendo dificuldade em cuidar do meu filho, o que eu posso fazer?</p>
-          <div class="post-assets">
-            <!-- aqui vai imagem, video, arquivo etc. -->
-          </div>
-          <div class="actions">
-            <div class="like-comment">
-              <button type="button" class="action">
-                <img src="./assets/like.png" alt="Botão de gostei">
-                <p>Gostei</p>
-              </button>
-              <button type="button" class="action">
-                <img src="./assets/comment.png" alt="Botão de comentários">
-                <p>Comentários</p>
-              </button>
-            </div>
-            <button type="button" class="action">
-              <img src="./assets/share.png" alt="Botão de compartilhar">
-              <p>Compartilhar</p>
-            </button>
-          </div>
-        </div>
-        <div class="post">
-          <div class="user-post">
-            <img src="./assets/user_icon.png" alt="Elisângela">
-            <div class="post-hashtags-container">
-              <div>
-                <p>Elisângela</p>
-                <div class="divider-point"></div>
-                <p class="post-time">40 min</p>
-              </div>
-              <div class="hashtags">
-                <a href="#" class="hashtag">#sermãe</a>
-                <a href="#" class="hashtag">#filhos</a>
-                <a href="#" class="hashtag">#mãesolteira</a>
-                <a href="#" class="hashtag">#ajuda</a>
-              </div>
-
-
-            </div>
-          </div>
-          <p class="post-description">Estou tendo dificuldade em cuidar do meu filho, o que eu posso fazer?</p>
-          <div class="post-assets">
-            <!-- aqui vai imagem, video, arquivo etc. -->
-          </div>
-          <div class="actions">
-            <div class="like-comment">
-              <button type="button" class="action">
-                <img src="./assets/like.png" alt="Botão de gostei">
-                <p>Gostei</p>
-              </button>
-              <button type="button" class="action">
-                <img src="./assets/comment.png" alt="Botão de comentários">
-                <p>Comentários</p>
-              </button>
-            </div>
-            <button type="button" class="action">
-              <img src="./assets/share.png" alt="Botão de compartilhar">
-              <p>Compartilhar</p>
-            </button>
-          </div>
-        </div>
-        <div class="post">
-          <div class="user-post">
-            <img src="./assets/user_icon.png" alt="Elisângela">
-            <div class="post-hashtags-container">
-              <div>
-                <p>Elisângela</p>
-                <div class="divider-point"></div>
-                <p class="post-time">40 min</p>
-              </div>
-              <div class="hashtags">
-                <a href="#" class="hashtag">#sermãe</a>
-                <a href="#" class="hashtag">#filhos</a>
-                <a href="#" class="hashtag">#mãesolteira</a>
-                <a href="#" class="hashtag">#ajuda</a>
-              </div>
-
-
-            </div>
-          </div>
-          <p class="post-description">Estou tendo dificuldade em cuidar do meu filho, o que eu posso fazer?</p>
-          <div class="post-assets">
-            <!-- aqui vai imagem, video, arquivo etc. -->
-          </div>
-          <div class="actions">
-            <div class="like-comment">
-              <button type="button" class="action">
-                <img src="./assets/like.png" alt="Botão de gostei">
-                <p>Gostei</p>
-              </button>
-              <button type="button" class="action">
-                <img src="./assets/comment.png" alt="Botão de comentários">
-                <p>Comentários</p>
-              </button>
-            </div>
-            <button type="button" class="action">
-              <img src="./assets/share.png" alt="Botão de compartilhar">
-              <p>Compartilhar</p>
-            </button>
-          </div>
-        </div>
       </div>
 
     </section>
@@ -395,6 +221,101 @@
     </div>
 
   </main>
+  <div id="overlay-modal-post">
+    <div id="post-modal-content">
+      <div class="post-modal-user">
+        <div class="user-post-data">
+          <img src="./assets/user_icon.png" alt="Elisângela">
+          <p>Elisângela Rodrigues Lima</p>
+        </div>
+        <textarea type="text" name="post" id="post-feed" placeholder="No que você está pensando?"
+          onclick="openModal()"></textarea>
+        <div class="tools">
+          <button class="tool-container">
+            <img src="./assets/camera.png" alt="Câmera">
+            <p>Câmera</p>
+          </button>
+          <button class="tool-container">
+            <img src="./assets/images.png" alt="Câmera">
+            <p>Imagens</p>
+          </button>
+          <button class="tool-container">
+            <img src="./assets/videos.png" alt="Câmera">
+            <p>Vídeos</p>
+          </button>
+          <button class="tool-container">
+            <img src="./assets/location.png" alt="Câmera">
+            <p>Localização</p>
+          </button>
+        </div>
+
+        <div class="actions-btns">
+          <button type="button" id="cancel-post-btn" onclick="closeModal()">
+            Cancelar
+          </button>
+          <button type="button" id="create-post-btn" onclick="closeModal()">
+            Postar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="overlay-modal-report">
+    <div id="report-modal-content">
+      <header>
+
+        <h3>Escolha o motivo da denúncia</h3>
+      </header>
+      <main class="report-options">
+        <button type="button" class="report-option" onclick="closeReportModal()">
+          Xingamentos, racismo, homofobia, prenconceitos em geral.
+        </button>
+        <button type="button" class="report-option" onclick="closeReportModal()">
+          Conta falsa, espalhando desinformação.
+        </button>
+        <button type="button" class="report-option" onclick="closeReportModal()">
+          Por que eu quero denunciar.
+        </button>
+
+      </main>
+      <footer>
+        <p class="report-footer-text">Nossa equipe irá analisar sua denúncia e as ações do denunciado, informando-lhe
+          caso ocorra algum banimento/suspensão.</p>
+      </footer>
+      <div class="btn-toogle-modal">
+
+        <button type="button" id="cancel-report-btn" onclick="closeReportModal()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="overlay-user-modal">
+    <div id="user-modal-content">
+      <button class="close-btn" onclick="closeUserModal()">X</button>
+      <div class="username">
+        <img src="./assets/user_icon.png" alt="Elisângela">
+        <p>Elisângela Rodrigues Lima</p>
+      </div>
+
+      <div class="achievements">
+        <div class="achievement">
+          <img src="./assets/comment.png" alt="Botão de comentários">
+          <p>20 Comentários</p>
+        </div>
+        <div class="achievement">
+          <img src="./assets/like.png" alt="Botão de gostei">
+          <p>24 Likes</p>
+        </div>
+        <div class="achievement">
+          <img src="./assets/trend.png" alt="Botão de gostei">
+          <p>12 Tópicos iniciados</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>

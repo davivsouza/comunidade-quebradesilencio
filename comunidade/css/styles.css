@@ -122,6 +122,7 @@ a:hover {
     align-items: center;
     gap: 4px;
     margin: 0 12px;
+    cursor: pointer;
 }
 
 
@@ -177,6 +178,7 @@ a:hover {
 .topicos ul li p.comunidade-nome {
     font-size: 16px;
     font-weight: 600;
+    color: #626365;
 }
 
 .topicos ul li p.comunidade-members {
@@ -218,6 +220,7 @@ a:hover {
 .topicos-em-alta ul li p.hot-topic-title {
     font-size: 16px;
     font-weight: 600;
+    color: #626365;
 }
 
 .topicos-em-alta ul li p.hot-topic-posts {
@@ -285,41 +288,6 @@ a:hover {
 
 
 
-.feed .tools {
-    margin-top: 12px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.feed .tools .tool-container {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
-.tool-container {
-    color: #626365;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px 8px;
-    transition: all .2s ease;
-}
-
-.tool-container:hover {
-    background: #f0eeee;
-    border-radius: 4px;
-}
-
-.feed .tools .tool-container p {
-
-    font-size: 12px;
-    color: #626365;
-}
 
 
 .post {
@@ -426,6 +394,7 @@ a:hover {
 .noticias ul li p.news-title {
     font-size: 16px;
     font-weight: 600;
+    color: #626365;
 }
 
 .noticias ul li p.news-description {
